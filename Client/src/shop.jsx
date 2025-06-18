@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 import { 
   Box, 
@@ -265,9 +266,9 @@ const Shop = () => {
               <Link href="#contact" color="orange.600" _hover={{color: 'blue.700',fontWeight: 'bold', textDecoration:"none"}}>
                 Contact
               </Link>
-              <Link href="#login" color="orange.600" _hover={{color: 'teal.600',fontWeight: 'bold', textDecoration:"none" }}>
+              <Button as={RouterLink} to="/login" colorScheme="orange" variant="outline">
                 Login/Register
-              </Link>
+              </Button>
               <HStack>
                 <Badge colorScheme="orange">{cart.length}</Badge>
                    <IconButton
