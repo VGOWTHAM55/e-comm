@@ -20,6 +20,21 @@ app.get('/', (req, res) => {
   res.send('✅ Stripe backend is running.');
 });
 
+const DEMO_USER = {
+  email: 'user@example.com',
+  password: 'password', // In real apps, NEVER store plain passwords!
+  token: 'demo-token'
+};
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  if (email === DEMO_USER.email && password === DEMO_USER.password) {
+    res.json({ token: DEMO_USER.token, message: 'Login successful' });
+  } else {
+    res.status(401).json({ error: 'Invalid credentials' });
+  }
+});
+
 // Create a PaymentIntent for Stripe
 app.post('/create-payment-intent', async (req, res) => {
   const { amount } = req.body;
