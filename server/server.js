@@ -12,7 +12,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
 // Allow frontend (Vite/React on port 5173) to access backend
-app.use(cors({ origin: 'https://e-comm-frontend-6ujc.onrender.com' }));
+app.use(cors({ origin: 'https://e-comm-frontend-2bfb.onrender.com' }));
 app.use(express.json());
 
 // Health check route
