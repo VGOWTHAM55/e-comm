@@ -40,7 +40,7 @@ const Payment = () => {
 
     setLoading(true);
 
-    const res = await fetch('https://e-comm-backend-54yh.onrender.com/create-payment-intent', {
+    const res = await fetch('https://e-comm-backend-rrd5.onrender.com/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: 2000 }), // $20
