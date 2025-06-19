@@ -4,7 +4,7 @@ import Shop from './shop';
 import Checkout from './checkout';
 import Payment from './payment';
 import Receipt from './receipt';
-import Login from './login';
+
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
       <Route path="/checkout" element={<Checkout />} />
        <Route path="/payment" element={<Payment />} />
        <Route path="/receipt" element={<Receipt />} />
-       <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
