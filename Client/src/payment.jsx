@@ -27,6 +27,8 @@ const CARD_OPTIONS = {
   },
 };
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const Payment = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -40,7 +42,7 @@ const Payment = () => {
 
     setLoading(true);
 
-    const res = await fetch('https://e-comm-backend-rrd5.onrender.com/create-payment-intent', {
+    const res = await fetch(`${BACKEND_URL}/create-payment-intent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: 2000 }), // $20
