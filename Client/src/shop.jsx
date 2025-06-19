@@ -215,22 +215,9 @@ const Shop = () => {
   };
 
    const handleCheckout = () => {
-    const token = localStorage.getItem('token');
-  if (!token) {
-    toast({
-      title: "Authentication Required",
-      description: "Please log in before proceeding.",
-      status: "warning",
-      duration: 3000,
-      isClosable: true
-    });
-    window.location.href = '/login';
-    return;
-  }
-
-  setCartModalOpen(false);
-  window.location.href = '/checkout';
-};
+    setCartModalOpen(false);
+    window.location.href = '/payment';
+  };
 
  return (
     <Box 
