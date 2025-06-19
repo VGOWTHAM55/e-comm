@@ -12,7 +12,11 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
 // Allow frontend (Vite/React on port 5173) to access backend
-app.use(cors({ origin: 'https://e-comm-frontend-2bfb.onrender.com' }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+  ]
+}));
 app.use(express.json());
 
 // Health check route
@@ -37,6 +41,7 @@ app.post('/login', (req, res) => {
 
 // Create a PaymentIntent for Stripe
 app.post('/create-payment-intent', async (req, res) => {
+  console.log('Received payment intent request:', req.body);
   const { amount } = req.body;
 
   if (!amount || typeof amount !== 'number') {
